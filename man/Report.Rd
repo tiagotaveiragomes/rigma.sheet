@@ -15,6 +15,8 @@ Spreadsheet report
 
 \item{\code{path}}{the directory where the report is to be generated}
 
+\item{\code{gdrive}}{the directory where the report is to be generated}
+
 \item{\code{name}}{the name of the report file}
 
 \item{\code{title}}{Human friendly version of the report name}
@@ -58,7 +60,15 @@ Spreadsheet report
 \subsection{Method \code{new()}}{
 Initialize the report
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Report$new(name, path, title, description, author, config.filename.ts = TRUE)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Report$new(
+  name,
+  path,
+  gdrive = NULL,
+  title,
+  description,
+  author,
+  config.filename.ts = TRUE
+)}\if{html}{\out{</div>}}
 }
 
 }
@@ -66,6 +76,7 @@ Initialize the report
 \if{html}{\out{<a id="method-sheet.add"></a>}}
 \if{latex}{\out{\hypertarget{method-sheet.add}{}}}
 \subsection{Method \code{sheet.add()}}{
+Add a sheet object to the report
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Report$sheet.add(sheet)}\if{html}{\out{</div>}}
 }
@@ -75,6 +86,7 @@ Initialize the report
 \if{html}{\out{<a id="method-save"></a>}}
 \if{latex}{\out{\hypertarget{method-save}{}}}
 \subsection{Method \code{save()}}{
+Save the report to disk
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Report$save()}\if{html}{\out{</div>}}
 }
