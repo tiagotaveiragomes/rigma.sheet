@@ -64,18 +64,21 @@ Report <- R6Class("Report",
 
     #' @description Add a sheet object to the report
     sheet.add = function(sheet){
+      is_first <- FALSE
       if(!sheet$name %in% names(self$sheets)){
         addWorksheet(self$wb, sheet$name)
+        is_first <- TRUE
       }
       self$sheets[[sheet$name]] <- sheet$data
       writeData(self$wb, sheet$name, sheet$data,
         colNames=FALSE,
         rowNames=FALSE
       )
-
-      for (fmt in sheet$formatting){
-        op <- self[[fmt$op]]
-        rlang::invoke(op, fmt$args)
+      if(is_first){
+        for (fmt in sheet$formatting){
+          op <- self[[fmt$op]]
+          rlang::invoke(op, fmt$args)
+        }
       }
     },
 
