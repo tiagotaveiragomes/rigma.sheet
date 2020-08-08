@@ -22,6 +22,18 @@ Stat <- R6Class("Stat",
     std = function(df, col){
       self$preety(sd(df[,col], na.rm=TRUE))
     },
+    sum = function(df, col){
+      self$preety(sum(df[,col], na.rm=TRUE))
+    },
+    nopp = function(df, col){
+      NULL
+    },
+    blank = function(df, col){
+      " "
+    },
+    id = function(df, col){
+      df[1, col]
+    },
     p50 = function(df, col){
       self$preety(median(df[,col], na.rm=TRUE))
     },

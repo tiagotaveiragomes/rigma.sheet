@@ -106,19 +106,21 @@ Sheet <- R6Class("Sheet",
 
     build.format.header = function(){
       start_col <- 2
-      merge_step <- (ncol(self$data) - 1) / length(self$groups)
-      for (group in self$groups){
-        end_col <- start_col + merge_step - 1
-        self$add.format.op(list(
-            op="sheet.merge.header",
-            args=list(
-              name=self$name,
-              col=start_col:end_col,
-              row=1
+      if (ncol(self$data) > 1){
+        merge_step <- (ncol(self$data) - 1) / length(self$groups)
+        for (group in self$groups){
+          end_col <- start_col + merge_step - 1
+          self$add.format.op(list(
+              op="sheet.merge.header",
+              args=list(
+                name=self$name,
+                col=start_col:end_col,
+                row=1
+              )
             )
           )
-        )
-        start_col <- end_col + 1
+          start_col <- end_col + 1
+        }
       }
     },
 
@@ -231,11 +233,10 @@ Sheet <- R6Class("Sheet",
       self$process.cell.static(row, col, "header.main")
 
       for (group in self$groups) {
-        data <- c(
-          data,
-          group$title,
-          self$build.spacer(length(self$header$attrs)-1)
-        )
+        data <- c(data, group$title)
+        if(length(self$header$attrs) > 1){
+          data <- c(data, self$build.spacer(length(self$header$attrs)-1))
+        }
         for(label in self$header$labels) {
           col <- col + 1
           self$process.cell.static(row, col, "header.group")

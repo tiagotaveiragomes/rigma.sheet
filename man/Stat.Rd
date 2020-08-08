@@ -15,6 +15,10 @@ Handy Statistics
 \item \href{#method-preety}{\code{Stat$preety()}}
 \item \href{#method-avg}{\code{Stat$avg()}}
 \item \href{#method-std}{\code{Stat$std()}}
+\item \href{#method-sum}{\code{Stat$sum()}}
+\item \href{#method-nopp}{\code{Stat$nopp()}}
+\item \href{#method-blank}{\code{Stat$blank()}}
+\item \href{#method-id}{\code{Stat$id()}}
 \item \href{#method-p50}{\code{Stat$p50()}}
 \item \href{#method-iqr}{\code{Stat$iqr()}}
 \item \href{#method-prev}{\code{Stat$prev()}}
@@ -55,6 +59,42 @@ Handy Statistics
 \subsection{Method \code{std()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Stat$std(df, col)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-sum"></a>}}
+\if{latex}{\out{\hypertarget{method-sum}{}}}
+\subsection{Method \code{sum()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Stat$sum(df, col)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-nopp"></a>}}
+\if{latex}{\out{\hypertarget{method-nopp}{}}}
+\subsection{Method \code{nopp()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Stat$nopp(df, col)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-blank"></a>}}
+\if{latex}{\out{\hypertarget{method-blank}{}}}
+\subsection{Method \code{blank()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Stat$blank(df, col)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-id"></a>}}
+\if{latex}{\out{\hypertarget{method-id}{}}}
+\subsection{Method \code{id()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Stat$id(df, col)}\if{html}{\out{</div>}}
 }
 
 }
