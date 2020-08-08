@@ -67,7 +67,7 @@ Report <- R6Class("Report",
       if(!sheet$name %in% names(self$sheets)){
         addWorksheet(self$wb, sheet$name)
       }
-      self$sheets[sheet$name] <- sheet$data
+      self$sheets[[sheet$name]] <- sheet$data
       writeData(self$wb, sheet$name, sheet$data,
         colNames=FALSE,
         rowNames=FALSE
