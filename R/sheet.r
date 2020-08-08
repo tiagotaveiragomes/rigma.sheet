@@ -234,9 +234,6 @@ Sheet <- R6Class("Sheet",
 
       for (group in self$groups) {
         data <- c(data, group$title)
-        if(length(self$header$attrs) > 1){
-          data <- c(data, self$build.spacer(length(self$header$attrs)-1))
-        }
         for(label in self$header$labels) {
           col <- col + 1
           self$process.cell.static(row, col, "header.group")
